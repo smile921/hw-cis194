@@ -1,0 +1,217 @@
+%% -*- mode: LaTeX; compile-command: "mk" -*-
+
+\newif \ifdraft \draftfalse
+\input{iflvn}
+
+\DeclareFontShape{OT1}{cmr}{bx}{sc}{<-> cmbcsc10}{}
+\PassOptionsToPackage{table}{xcolor}
+
+\documentclass[12pt,oneside]{book}
+
+\newcommand{\Title}{COMBINATORIAL SPECIES AND LABELLED STRUCTURES}
+
+\input{defs}
+
+\title{\Title}
+\author{Brent Yorgey}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\pagenumbering{roman}
+\pagestyle{fancy}
+\frenchspacing
+\numberwithin{equation}{section}
+
+\newcommand{\doublespaced}{\renewcommand{\baselinestretch}{2}\normalfont}
+\newcommand{\singlespaced}{\renewcommand{\baselinestretch}{1}\normalfont}
+
+\thispagestyle{empty}
+
+\doublespaced
+\large\newlength{\oldparskip}\setlength\oldparskip{\parskip}\parskip=.3in
+\begin{centering}
+  \vfill
+  {\Huge \Title} \\
+  Brent Abraham Yorgey \\
+  A DISSERTATION \\
+  in \\
+  Computer and Information Science
+
+  \noindent\singlespaced\large
+  Presented to the Faculties of the University of Pennsylvania \\
+  in \\
+  Partial Fulfillment of the Requirements for the \\
+  Degree of Doctor of Philosophy \\
+  \doublespaced\large
+  2014 \\
+\end{centering}
+
+\vfill
+\singlespaced
+
+{\small
+
+\noindent
+Supervisor of Dissertation \\
+\signature \\
+Stephanie Weirich \\
+Associate Professor of CIS \\
+
+\noindent
+Graduate Group Chairperson \\
+\signature \\
+Lyle Ungar \\
+Professor of CIS
+
+\vspace{-0.1in}
+\noindent
+Dissertation Committee \\
+Steve Zdancewic (Associate Professor of CIS; Committee Chair) \\
+Jacques Carette (Associate Professor of Computer Science, McMaster University)\\
+Benjamin Pierce (Professor of CIS) \\
+Val Tannen (Professor of CIS) \\
+}
+
+\normalsize\parskip=\oldparskip
+
+\newpage
+
+\thispagestyle{empty}
+\begin{pagecentered}
+\doublespaced
+\parskip=.3in
+
+\Title \\
+COPYRIGHT \\
+2014 \\
+Brent Abraham Yorgey \bigskip
+
+\singlespaced
+\parskip=\oldparskip
+
+This work is licensed under a
+\href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons
+  Attribution 4.0 International License}.  To view a copy of this
+license, visit \bigskip
+
+\url{http://creativecommons.org/licenses/by/4.0/} \bigskip
+
+The complete source code for this document is available from \bigskip
+
+\url{http://github.com/byorgey/thesis}
+\end{pagecentered}
+
+\newpage
+
+\begin{pagecentered}
+
+\ifgreek
+% see http://www.guyrutenberg.com/culmus-latex/ ?
+%
+% \begingroup
+% \selectlanguage{hebrew} \large
+
+% בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ
+
+% \normalsize \hfill בראשית 1.1
+% \endgroup \bigskip
+
+\begingroup
+\selectlanguage{polutonikogreek} \large
+
+\begin{verse}
+ὅς ἐστιν εἰκὼν τοῦ θεοῦ τοῦ ἀοράτου, \\
+πρωτότοκος πάσης κτίσεως, \\
+ὅτι ἐν αὐτῷ ἐκτίσθη τὰ πάντα ἐν τοῖς οὐρανοῖς καὶ ἐπὶ τῆς γῆς, τὰ
+ὁρατὰ καὶ τὰ ἀόρατα, εἴτε θρόνοι εἴτε κυριότητες εἴτε ἀρχαὶ εἴτε
+ἐξουσίαι· τὰ πάντα δι’ αὐτοῦ καὶ εἰς αὐτὸν ἔκτισται·
+
+\vin καὶ αὐτός ἐστιν πρὸ πάντων
+
+\vin \vin καὶ τὰ πάντα ἐν αὐτῷ συνέστηκεν,
+
+\vin καὶ αὐτός ἐστιν ἡ κεφαλὴ τοῦ σώματος τῆς ἐκκλησίας·
+
+ὅς ἐστιν ἀρχή, \\
+πρωτότοκος ἐκ τῶν νεκρῶν, ἵνα γένηται ἐν πᾶσιν αὐτὸς πρωτεύων, \\
+ὅτι ἐν αὐτῷ εὐδόκησεν πᾶν τὸ πλήρωμα κατοικῆσαι καὶ δι’ αὐτοῦ
+ἀποκαταλλάξαι τὰ πάντα εἰς αὐτόν, εἰρηνοποιήσας διὰ τοῦ αἵματος τοῦ
+σταυροῦ αὐτοῦ, εἴτε τὰ ἐπὶ τῆς γῆς εἴτε τὰ ἐν τοῖς οὐρανοῖς· \bigskip
+\end{verse}
+
+\normalsize \hfill ΠΡΟΣ ΚΟΛΟΣΣΑΕΙΣ 1.15--20
+
+\endgroup
+\fi
+
+\end{pagecentered}
+
+\newpage
+
+\input{acks}
+
+\newpage
+
+\input{abstract}
+
+\tableofcontents
+
+\newpage
+
+\listoftables
+
+\listoffigures
+
+\newpage
+
+\begin{pagecentered}
+
+  This document is typeset in \LaTeX\ using Computer Modern. \medskip
+
+  It was edited using \texttt{emacs} and stored using \texttt{git} and
+  \url{github.com}. \medskip
+
+  The illustrations were produced with \texttt{diagrams} version 1.2
+  (\url{http://projects.haskell.org/diagrams}).
+\end{pagecentered}
+
+
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\setcounter{chapter}{-1}
+
+\include{intro}
+\include{prelim}
+\include{equality}
+\include{species}
+\include{generalized}
+\include{variants}
+\include{labelled}
+\include{conclusion}
+
+\appendix
+\include{liftproof}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nochapter{Bibliography}
+\label{ch:bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifcomments
+\begingroup
+\Large
+\textcolor{red}{TODOs: \arabic{todocount}}
+\endgroup
+\fi
+
+\bibliographystyle{plainnat}
+\bibliography{thesis}
+
+\end{document}

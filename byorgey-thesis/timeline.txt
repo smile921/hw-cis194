@@ -1,0 +1,89 @@
+Outline
+=======
+
++ Chapter 0: Introduction + related work
+
+  - Motivation
+  - Summary of contributions
+
++ Chapter 1: preliminaries
+
+  - Homotopy type theory.
+  - Category theory.
+  - Functor categories.
+  - Groupoids.
+  - Finiteness.
+  - Parametricity.
+  - Monoids and monoidal categories.
+
++ Chapter 2: Species
+  CONTRIBUTIONS:
+    - Generic categorical framework for species and generalizations thereof
+    - with a target audience of type theorists/functional programmers
+         novel parts: new audience, new gathering of material,
+         once material is in once place, new connections
+         (hopefully) see variants as instances of general framework
+         new instantiation in type theory
+
+  - Traditional definition of species.
+  - Restart "from scratch": functor categories.  Along the way,
+    explain what extra structure is needed for each new feature, and
+    give examples of categories we care about with those properties.
+  - Lifting monoidal structure from codomain
+    - Coproduct
+    - Cartesian/Hadamard product
+  - Day convolution.
+  - Lifting monoidal structure from domain (via Day convolution)
+    - partitional/Cauchy product
+    - arithmetic product
+  - Composition
+  - Differentiation + Pointing
+  - multisort species
+  - weighted species
+  - L-species
+
+  - Think about how to incorporate material on elimination etc.?
+
++ Chapter 3: Labelled structures
+  CONTRIBUTIONS:
+    - new idea of a labelled structure
+
+  - Joyal's definition of analytic functors.
+  - Labelled structures
+  - Operations on labelled structures, lifted from operations on
+    species.
+  - Abstracting over "storage exponentials".
+    - Functions
+    - Vectors
+    - Tries
+
++ Chapter 4: Applications
+
+  - Generic functions (map, partition, filter, etc.)
+  - A theory of matrix operations and allocation
+  - ?
+
+There is also a half-started chapter on computational interpretation
+of generating functions which I'm quite excited about, but at this
+point I think it's probably best to leave it out of the dissertation,
+and work it out/write it up at some point in the future.
+
+Timeline
+========
+
+Here's a proposed timeline for me to graduate in August.  I don't know
+how realistic this is but I will sure try my best.  Feedback welcome.
+Note in particular this does not include revising/writing/submitting
+any papers; we should talk more about whether/when/where that might
+happen.
+
+March 18--28 (2 weeks): write (most of) Chapter 2
+March 28--April 5 (1 week): Brent in London & Leipzig
+April 7--11: put together MFPS paper
+April 14--18: incorporate MFPS paper back into Chapter 2
+April 21--May 2 (2 weeks): finish chapter 2
+May (4 weeks): write chapter 3
+June (4 weeks): work out and write chapter 4, and turn material from Chapters 2 & 3 into a POPL submission?
+July (4 weeks): write Chapter 1 / miscellaneous / account for inevitable schedule slippage
+
+October 14: defend
