@@ -1,5 +1,5 @@
 {-# OPTIONS_GHC -Wall #-}
-module HW01 where
+module DemoTry01 where
 
 -- Exercise 1 -----------------------------------------
 
@@ -52,11 +52,4 @@ sumSpecDigits (x:xs) =( x `div` 10) + (x `mod` 10) + (sumSpecDigits xs)
 luhn :: Integer -> Bool
 luhn x = (sumSpecDigits( doubleEveryOther ( toRevDigits x )) `mod` 10 ) == 0
 
--- Exercise 6 -----------------------------------------
-
--- Towers of Hanoi for three pegs
-type Peg = String
-type Move = (Peg, Peg)
-
-hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
-hanoi = undefined
+ 
