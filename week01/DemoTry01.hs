@@ -52,4 +52,33 @@ sumSpecDigits (x:xs) =( x `div` 10) + (x `mod` 10) + (sumSpecDigits xs)
 luhn :: Integer -> Bool
 luhn x = (sumSpecDigits( doubleEveryOther ( toRevDigits x )) `mod` 10 ) == 0
 
+-- Exercise 6 -----------------------------------------
+-- [("a","b")] ie. move the top disc from a to b
+-- [("a","c")] ie. move the top disc from a to c
+-- [("b","c")] ie. move the top disc from b to c
+-- Towers of Hanoi for three pegs
+type Peg = String
+type Move = (Peg, Peg)
+
+hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
+hanoi x a b c  
+	| x==0 = []
+	| x==1 = [(a,c)]
+	| otherwise = (hanoi (x-1) a c b ) ++ [(a,c)] ++ (hanoi (x-1) b a c )
  
+-- Exercise 7 -----------------------------------------
+-- [("a","b")] ie. move the top disc from a to b
+-- [("a","c")] ie. move the top disc from a to c
+-- [("b","c")] ie. move the top disc from b to c
+-- Towers of Hanoi for four pegs
+hanoi4 :: Integer -> Peg -> Peg -> Peg ->Peg -> [Move]
+hanoi4 x a b c d 
+    | x==0 = []
+    | x==1 = [(a,d)]
+    | x==2 = [(a,b),(a,d),(b,d)]
+    | x==3 = [(a,b),(a,c),(a,d),(c,d),(b,d)]
+    | x==4 = [(a,b),(a,c),(a,d),(b,d),(c,d),(a,d),(a,c),(a,d),(b,d),(c,d)]
+    | otherwise = (hanoi4 (x-2) a c d b) ++ [(a,c),(a,d),(c,d)] ++ (hanoi4 (x-2) b a c d)
+
+-- sorry this is not the fewest method !!!
+-- maybe later do this again

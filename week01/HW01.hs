@@ -59,4 +59,8 @@ type Peg = String
 type Move = (Peg, Peg)
 
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
-hanoi = undefined
+hanoi n x y z  
+	| n == 0 = [ ]
+	| n == 1 = [(x,z)] 	 
+	| otherwise = (hannoi (n-1) x z y ) ++ [(x,z)] ++ (hannoi (n-1) y x z )
+ 
