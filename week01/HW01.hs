@@ -62,5 +62,21 @@ hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
 hanoi n x y z  
 	| n == 0 = [ ]
 	| n == 1 = [(x,z)] 	 
-	| otherwise = (hannoi (n-1) x z y ) ++ [(x,z)] ++ (hannoi (n-1) y x z )
+	| otherwise = (hanoi (n-1) x z y ) ++ [(x,z)] ++ (hanoi (n-1) y x z )
  
+ -- Exercise 7 -----------------------------------------
+-- [("a","b")] ie. move the top disc from a to b
+-- [("a","c")] ie. move the top disc from a to c
+-- [("b","c")] ie. move the top disc from b to c
+-- Towers of Hanoi for four pegs
+hanoi4 :: Integer -> Peg -> Peg -> Peg ->Peg -> [Move]
+hanoi4 x a b c d 
+    | x==0 = []
+    | x==1 = [(a,d)]
+    | x==2 = [(a,b),(a,d),(b,d)]
+    | x==3 = [(a,b),(a,c),(a,d),(c,d),(b,d)]
+    | x==4 = [(a,b),(a,c),(a,d),(b,d),(c,d),(a,d),(a,c),(a,d),(b,d),(c,d)]
+    | otherwise = (hanoi4 (x-2) a c d b) ++ [(a,c),(a,d),(c,d)] ++ (hanoi4 (x-2) b a c d)
+
+-- sorry this is not the fewest method !!!
+-- maybe later do this again
