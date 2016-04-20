@@ -8,6 +8,38 @@
 *  注册账号
 *  
 
+## 环境设置
+
+* cabal install cabal-install
+* cabal update
+* cabal install aeson
+* cabal install haskell-src-exts
+* cabal install ghc-mod
+* cabal install cmdargs
+* canal install haddock
+
+Download the source code of hdevtools for Windows from https://github.com/mvoidex/hdevtools
+Unpack it to some folder
+Go to that folder and run:
+
+runhaskell Setup.hs configure --user
+runhaskell Setup.hs build
+runhaskell Setup.hs install
+Watch for the path (in the console output) where the hdevtools have been installed. You will need this path when setting up the SublimeHaskell plugin in Sublime. The path should look something like this: C:\Users\Aleksey Bykov\AppData\Roaming\cabal\bin where Aleksey Bykov is the name of the current user.
+
+Setting up the SublimeHaskell plugin in Sublime:
+
+Start Sublime
+Go Preferences >> Package settings >> SumblimeHaskell >> Settings - User
+Make sure you configuration looks like:
+
+{
+    "add_to_PATH":
+    [
+        "C:/Users/Aleksey Bykov/AppData/Roaming/cabal/bin/"
+    ],
+    "enable_hdevtools": true
+}
 
 ## Data.Char 包
 
